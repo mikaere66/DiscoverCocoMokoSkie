@@ -1,7 +1,7 @@
 [versions]
 
-kotlin = "2.0.20"
-compose = "1.7.0-alpha03"
+kotlin = "2.0.0" # was 2.0.20
+compose = "1.6.11" # was 1.7.0-alpha03
 agp = "8.5.2"
 androidx-activityCompose = "1.9.1"
 androidx-uiTest = "1.6.8"
@@ -12,6 +12,20 @@ kotlinx-serialization = "1.7.1"
 kotlinx-datetime = "0.6.0"
 koin = "4.0.0-RC1"
 sqlDelight = "2.0.2"
+
+#Maps
+accompanist = "0.29.2-rc"
+gmsLocation = "21.3.0"
+gmsMaps = "19.0.0"
+mapsCompose = "3.1.0"
+secretsGradle = "2.0.1"
+
+#MM
+compose-material-icons-extended = "1.6.1"
+cupertino = "0.1.0-alpha04"
+material3 = "1.2.1"
+material3-window = "0.5.0"
+splashScreen = "1.0.1"
 
 [libraries]
 
@@ -32,6 +46,22 @@ sqlDelight-driver-sqlite = { module = "app.cash.sqldelight:sqlite-driver", versi
 sqlDelight-driver-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
 sqlDelight-driver-native = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
 
+#Maps
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "gmsLocation" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "gmsMaps" }
+maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose" }
+
+#MM
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref="material3" }
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashScreen" }
+compose-material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "compose-material-icons-extended" }
+cupertino-adaptive = { module = "io.github.alexzhirkevich:cupertino-adaptive", version.ref = "cupertino" }
+cupertino-icons-extended = { module = "io.github.alexzhirkevich:cupertino-icons-extended", version.ref = "cupertino" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+material3-window = { module = "dev.chrisbanes.material3:material3-window-size-class-multiplatform", version.ref = "material3-window" }
+
 [plugins]
 
 multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
@@ -40,3 +70,6 @@ compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 sqlDelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
+
+#Maps
+secretsGradle = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secretsGradle" }

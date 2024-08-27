@@ -5,9 +5,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowInsetsControllerCompat
+import io.github.alexzhirkevich.cupertino.adaptive.Theme
+
+actual fun determineTheme(): Theme = Theme.Material3
 
 @Composable
 internal actual fun SystemAppearance(isDark: Boolean) {
+
     val view = LocalView.current
     LaunchedEffect(isDark) {
         val window = (view.context as Activity).window

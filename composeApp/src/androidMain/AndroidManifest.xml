@@ -4,7 +4,9 @@
     <application
         android:icon="@android:drawable/ic_menu_compass"
         android:label="DiscoverCocoMokoSkie"
+        android:name=".MainApplication"
         android:theme="@android:style/Theme.Material.NoActionBar">
+
         <activity
             android:name=".AppActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
@@ -13,9 +15,11 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

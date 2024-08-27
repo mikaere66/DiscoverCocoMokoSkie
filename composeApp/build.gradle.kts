@@ -11,6 +11,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlinx.serialization)
     alias(libs.plugins.sqlDelight)
+
+    alias(libs.plugins.secretsGradle) version libs.versions.secretsGradle.get()
 }
 
 kotlin {
@@ -41,6 +43,23 @@ kotlin {
     }
 
     sourceSets {
+        androidMain.dependencies {
+            implementation(compose.uiTooling)
+            implementation(libs.androidx.activityCompose)
+            implementation(libs.kotlinx.coroutines.android)
+            implementation(libs.sqlDelight.driver.android)
+
+            // Maps
+            implementation(libs.accompanist.permissions)
+            implementation(libs.maps.compose)
+            implementation(libs.play.services.maps)
+
+            // MM
+            implementation(libs.androidx.core.splashscreen)
+            // implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
+        }
+
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -54,6 +73,12 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
+
+            // MM
+            implementation(libs.compose.material.icons.extended)
+            implementation(libs.cupertino.adaptive)
+            implementation(libs.cupertino.icons.extended)
+            implementation(libs.material3.window)
         }
 
         commonTest.dependencies {
@@ -61,13 +86,6 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.uiTest)
             implementation(libs.kotlinx.coroutines.test)
-        }
-
-        androidMain.dependencies {
-            implementation(compose.uiTooling)
-            implementation(libs.androidx.activityCompose)
-            implementation(libs.kotlinx.coroutines.android)
-            implementation(libs.sqlDelight.driver.android)
         }
 
         iosMain.dependencies {
