@@ -1,7 +1,15 @@
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+rootProject.name = "DiscoverCocoMokoSkie"
+
 pluginManagement {
     repositories {
-        google()
+        google {
+            content { 
+              	includeGroupByRegex("com\\.android.*")
+              	includeGroupByRegex("com\\.google.*")
+              	includeGroupByRegex("androidx.*")
+              	includeGroupByRegex("android.*")
+            }
+        }
         gradlePluginPortal()
         mavenCentral()
     }
@@ -9,11 +17,16 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
-        google()
+        google {
+            content { 
+              	includeGroupByRegex("com\\.android.*")
+              	includeGroupByRegex("com\\.google.*")
+              	includeGroupByRegex("androidx.*")
+              	includeGroupByRegex("android.*")
+            }
+        }
         mavenCentral()
     }
 }
+include(":composeApp")
 
-rootProject.name = "DiscoverCocoMokoSkie"
-include(":androidApp")
-include(":shared")
