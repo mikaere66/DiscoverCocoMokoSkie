@@ -1,13 +1,7 @@
 package com.michaelrmossman.multiplatform.discover.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.compositionLocalOf
-import androidx.compose.runtime.mutableStateOf
 import io.github.alexzhirkevich.cupertino.adaptive.AdaptiveTheme
 import io.github.alexzhirkevich.cupertino.adaptive.CupertinoThemeSpec
 import io.github.alexzhirkevich.cupertino.adaptive.ExperimentalAdaptiveApi
@@ -44,8 +38,3 @@ fun AppTheme(
         target = theme
     )
 }
-
-internal val LocalThemeIsDark = compositionLocalOf { mutableStateOf(true) }
-
-@Composable
-internal expect fun SystemAppearance(isDark: Boolean)

@@ -40,7 +40,6 @@ kotlin {
             baseName = "ComposeApp"
             isStatic = true
             linkerOpts("-lsqlite3")
-            export(libs.touchlab.kermit.simple)
         }
     }
 
@@ -92,7 +91,6 @@ kotlin {
 
         iosMain.dependencies {
             implementation(libs.sqlDelight.driver.native)
-            api(libs.touchlab.kermit.simple)
         }
 
     }
